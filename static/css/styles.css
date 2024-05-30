@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.navbar {
+    background-color: #343a40;
+    padding: 10px;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    margin-left: 15px;
+}
+
+.navbar .nav-link:hover {
+    text-decoration: underline;
+}
+
+.main-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 15px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.sidebar .list-group-item {
+    padding: 10px;
+    border: none;
+    background-color: #f8f9fa;
+    margin-bottom: 5px;
+}
+
+.sidebar .list-group-item:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+.content {
+    width: 80%;
+    padding: 15px;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.carousel-item {
+    display: none;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #ddd;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carousel-control-prev {
+    left: 0;
+}
+
+.carousel-control-next {
+    right: 0;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: calc(33.333% - 10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.footer {
+    background-color: #343a40;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+}
