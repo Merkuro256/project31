@@ -1,17 +1,17 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def index(request):
     return render(request, 'elements/index.html')
 
-
+@login_required
 def elements(request):
     return render(request, 'elements/elements.html')
 
-def register(request):
-    return render(request, 'elements/register.html')
-def login(request):
-    return render(request, 'elements/login.html')
+@login_required
+def first_lesson(request):
+    return render(request, 'elements/first_lesson.html')
 
 def test_context(request):
     context = {

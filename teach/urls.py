@@ -16,15 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
-from elements.views import index, elements, test_context,login,register
+from elements.views import index, elements, test_context, first_lesson
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('elements/', elements, name='elements'),
+    path('first-lesson/', first_lesson, name='first_lesson'),
     path('test_context/', test_context,name='test_context'),
-    path('login/', login,name='login'),
-    path('register/', register, name='register'),
     path('users/', include('users.urls')),
+    path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),  # Глобальный путь для logout
     path('', include('django.contrib.auth.urls')),  # Для включения стандартных URL аутентификации
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
