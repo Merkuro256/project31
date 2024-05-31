@@ -20,13 +20,14 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
-from elements.views import index, elements, test_context, first_lesson
+from elements.views import index, elements, test_context, first_lesson, second_lesson
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('elements/', elements, name='elements'),
     path('first-lesson/', first_lesson, name='first_lesson'),
+    path('second-lesson/', second_lesson, name='second_lesson'),
     path('test_context/', test_context,name='test_context'),
     path('users/', include('users.urls')),
     path('logout/', auth_views.LogoutView.as_view(next_page='/'), name='logout'),  # Глобальный путь для logout

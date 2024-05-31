@@ -248,7 +248,9 @@
                             <p class="card-text">Определение, вызов, параметры, возвращаемые значения.</p>
                         </div>
                         <div class="card-footer text-center">
-                            <button type="button" class="btn btn-outline-primary">Начать урок</button>
+                            <a href="{% url 'second_lesson' %}">
+                                <button type="button" class="btn btn-outline-primary">Начать урок</button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -261,9 +263,11 @@
                             </h4>
                             <p class="card-text">Определение классов, создание объектов, наследование.</p>
                         </div>
-                        <div class="card-footer text-center">
-                            <button type="button" class="btn btn-outline-primary">Начать урок</button>
-                        </div>
+                        <a href="{% url 'third_lesson' %}">
+                            <div class="card-footer text-center">
+                                <button type="button" class="btn btn-outline-primary">Начать урок</button>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

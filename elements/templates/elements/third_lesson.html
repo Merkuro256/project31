@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Функции, модули и работа с файлами в Python</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, p {
+            margin: 20px 0;
+        }
+        code {
+            background-color: #f1f1f1;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        ol {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Лекция №3: Функции, модули и работа с файлами</h1>
+        <h2>Тема: Функции, модули и работа с файлами в Python</h2>
+        <h2>Цели лекции:</h2>
+        <ol>
+            <li>Изучить создание и использование функций.</li>
+            <li>Понять концепцию модулей и импортирования.</li>
+            <li>Изучить основные методы работы с файлами.</li>
+        </ol>
+
+        <hr>
+
+        <h2>Функции</h2>
+        <p>Функции позволяют организовать код в многократно используемые блоки.</p>
+
+        <h3>1. Определение функции</h3>
+        <pre><code>def greet(name):
+    return f"Hello, {name}!"
+
+# Вызов функции
+print(greet("Alice"))</code></pre>
+
+        <h3>2. Аргументы функции</h3>
+        <p>Функции могут принимать произвольное количество аргументов:</p>
+        <pre><code>def add(a, b):
+    return a + b
+
+print(add(5, 3))</code></pre>
+        <p>Можно задать значения по умолчанию:</p>
+        <pre><code>def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+print(greet("Alice"))
+print(greet("Bob", "Hi"))</code></pre>
+
+        <h3>3. Возвращение значений</h3>
+        <p>Функция может возвращать несколько значений:</p>
+        <pre><code>def get_person():
+    name = "Alice"
+    age = 25
+    return name, age
+
+name, age = get_person()
+print(name, age)</code></pre>
+
+        <hr>
+
+        <h2>Модули</h2>
+        <p>Модуль — это файл с кодом на Python, который может содержать переменные, функции и классы.</p>
+
+        <h3>1. Импорт модулей</h3>
+        <pre><code>import math
+
+print(math.sqrt(16))</code></pre>
+
+        <h3>2. Импорт отдельных функций</h3>
+        <pre><code>from math import sqrt
+
+print(sqrt(16))</code></pre>
+
+        <h3>3. Создание собственного модуля</h3>
+        <p>Создайте файл mymodule.py:</p>
+        <pre><code># mymodule.py
+def greet(name):
+    return f"Hello, {name}!"</code></pre>
+        <p>Импортируйте и используйте модуль:</p>
+        <pre><code>import mymodule
+
+print(mymodule.greet("Alice"))</code></pre>
+
+        <hr>
+
+        <h2>Работа с файлами</h2>
+        <p>Python предоставляет встроенные функции для работы с файлами.</p>
+
+        <h3>1. Открытие и закрытие файла</h3>
+        <pre><code># Открытие файла
+file = open("example.txt", "w")
+
+# Запись в файл
+file.write("Hello, World!")
+
+# Закрытие файла
+file.close()</code></pre>
+
+        <h3>2. Чтение из файла</h3>
+        <pre><code># Открытие файла для чтения
+file = open("example.txt", "r")
+
+# Чтение содержимого файла
+content = file.read()
+
+# Закрытие файла
+file.close()
+
+print(content)</code></pre>
+
+        <h3>3. Использование конструкции with</h3>
+        <p>Конструкция with автоматически закрывает файл после работы с ним:</p>
+        <pre><code>with open("example.txt", "w") as file:
+    file.write("Hello, World!")
+
+with open("example.txt", "r") as file:
+    content = file.read()
+
+print(content)</code></pre>
+
+        <hr>
+
+        <h2>Заключение</h2>
+        <p>В этой лекции мы рассмотрели создание и использование функций, работу с модулями и основные методы работы с файлами в Python.</p>
+        <h3>Задание на дом:</h3>
+        <ol>
+            <li>Напишите функцию, которая принимает два числа и возвращает их сумму.</li>
+            <li>Создайте модуль с одной функцией, импортируйте его в основной файл и вызовите эту функцию.</li>
+            <li>Напишите программу, которая создает текстовый файл, записывает в него несколько строк и затем читает и выводит их на экран.</li>
+        </ol>
+    </div>
+</body>
+
+</html>

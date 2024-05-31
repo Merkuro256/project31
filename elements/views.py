@@ -13,6 +13,14 @@ def elements(request):
 def first_lesson(request):
     return render(request, 'elements/first_lesson.html')
 
+@login_required
+def second_lesson(request):
+    return render(request, 'elements/second_lesson.html')
+
+@login_required
+def third_lesson(request):
+    return render(request, 'elements/third_lesson.html')
+
 def test_context(request):
     context = {
         'title': 'Teach',
